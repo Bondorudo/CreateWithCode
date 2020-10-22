@@ -17,9 +17,9 @@ public class GunController : MonoBehaviour
     public bool isFiring = false;
     public bool changeProjectile = false;
     public bool isPlayer;
-    public bool isEnemy;
-    public bool isEnemyTurret;
+    private bool isEnemy;
 
+    public bool IsEnemy { get => isEnemy; set => isEnemy = value; }
 
     private void Awake()
     {
@@ -47,7 +47,7 @@ public class GunController : MonoBehaviour
             }
         }
         //is enemy
-        if (isEnemy == true)
+        if (IsEnemy == true)
         {
             //A new projectile can be shot once coolDown reaches coolDownDefault
             coolDown += Time.deltaTime;
@@ -67,14 +67,6 @@ public class GunController : MonoBehaviour
                 }
             }
         }
-        if (isEnemyTurret == true)
-        {
-            //A new projectile can be shot once coolDown reaches coolDownDefault
-            coolDown += Time.deltaTime;
-            if (isFiring && coolDown > coolDownDefault)
-            {
-
-            }
-         }
+        
     }
 }

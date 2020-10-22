@@ -19,11 +19,11 @@ public class GameManager : MonoBehaviour
 
     private float spawnRange = 14f;
     
-    public int enemyCount;
-    public int waveNumber = 0;
-    public int wave;
+    private int enemyCount;
+    private int waveNumber = 0;
+    private int wave;
 
-    public bool isGameActive;
+    private bool isGameActive;
 
     
     private void Start()
